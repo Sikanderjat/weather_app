@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+</head>
+<style>*
+    {
+      margin: 0;
+      padding: 0;
+      outline: none;
+    }
+    h1{
+        background-color: #fcfdfd;
+        padding-left: 35%;
+
+    }
+    body
+    {
+      font-family: 'Roboto', sans-serif;
+      overflow: hidden;
+      background: #009688;;
+    }
+    
+    div.widget
+    {
+      position: relative;
+      width: 355px;
+      height: 125px;
+      margin: 150px auto;
+      background-color: #fcfdfd;
+      border-radius: 9px;
+      padding: 25px;
+      padding-right: 30px;
+      box-shadow: 0px 31px 35px -26px #080c21;
+    }
+    
+    
+    
+    div.date
+    {
+      font-size: 14px;
+      font-weight: bold;
+      color: rgba(0,0,0,0.5);
+    }
+    
+    div.city
+    {
+      font-size: 21px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding-top: 5px;
+      color: rgba(0,0,0,0.7);
+    }
+    
+    div.temp
+    {
+      
+      font-size: 50px;
+      color: rgba(0,0,0,0.9);
+      font-weight: 100;
+    }
+    
+    div.panel
+    {
+      display: inline-block;
+    }
+    
+    div.right-panel
+    {
+      position: absolute;
+      float: right;
+      top: 0;
+      margin-top: 35px;
+      padding-top: 8%;
+      padding-left: 12%;
+      font-size: xxx-large;
+    }
+    
+    
+    #btnDownload
+    {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    
+    #btnDownload img
+    {
+      width: 135px;
+      
+    }
+    h6{
+      font-size: large;
+    }
+    </style>
+<body>
+    <h1>welcome to my weather website</h1>
+    <div class="widget">
+            
+        <div class="left-panel panel">
+            <div class="date">
+                {{day}},{{date}}
+            </div>
+            <div class="city">
+              
+            </div>
+            <div class="temp">
+              {{wether["city_name"]}}
+              <h6>pressure {{wether["pressure"]}}</h6>
+               &deg;
+            </div>
+        </div>
+        <div class="right-panel panel">
+            <h6>humidity {{wether["humidity"]}}</h6>
+            {{wether["temp"]}}
+        </div>
+       
+        
+
+    </div>
+</body>
+</html>
