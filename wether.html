@@ -1,3 +1,73 @@
+"""
+Certainly! Here is an example and explanation of what `weather.html` might contain for the Weather App:
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Information</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Weather Information</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <form method="post" action="/weather">
+                <label for="city">Enter city name:</label>
+                <input type="text" id="city" name="city" required>
+                <button type="submit">Get Weather</button>
+            </form>
+        </section>
+
+        <section id="weather-details">
+            {% if weather %}
+                <h2>Weather in {{ weather['name'] }}</h2>
+                <p>Temperature: {{ weather['main']['temp'] }}&deg;C</p>
+                <p>Weather: {{ weather['weather'][0]['description'] }}</p>
+                <p>Humidity: {{ weather['main']['humidity'] }}%</p>
+                <p>Wind Speed: {{ weather['wind']['speed'] }} m/s</p>
+            {% else %}
+                <p>No weather data available. Please enter a city name.</p>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Weather App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+```
+
+### Explanation
+
+- **Header**: Contains the title and navigation links.
+- **Main Content**:
+  - **Form Section**: A form where users can enter the city name to fetch the weather data.
+  - **Weather Details Section**: Displays weather information if available. It uses Jinja2 templating syntax to insert dynamic content from the Flask backend.
+    - **Conditions**:
+      - If weather data is available (`{% if weather %}`), it displays the weather information.
+      - If no weather data is available, it prompts the user to enter a city name.
+- **Footer**: Basic footer with copyright information.
+
+This template ensures that users can easily input a city name to get weather updates and view the results in a structured format.
+
+
+"""
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
