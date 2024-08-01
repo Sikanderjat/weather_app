@@ -113,7 +113,7 @@ def signup():
 def wether():
     city=request.form.get("city")
 
-    api_key = "YOUR_API_KEY"
+    api_key = "ccf7bd0fcf6e7edb60a2cbfbe595a045"
 
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
 
