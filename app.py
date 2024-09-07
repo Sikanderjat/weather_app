@@ -109,7 +109,7 @@ def signup():
     return render_template("signup.html")
 
 
-@app.route("/wether",methods=["post","get"])
+@app.route("/weather",methods=["post","get"])
 def wether():
     city=request.form.get("city")
 
@@ -127,8 +127,8 @@ def wether():
         max_temp = data['main']['temp_max']
         pressure = data['main']['pressure']
         humidity = data['main']['humidity']
-        wether={"city_name":city_name,"temp":temp,"pressure":pressure,"humidity":humidity}
-        print(wether)
+        weather={"city_name":city_name,"temp":temp,"pressure":pressure,"humidity":humidity}
+        print(weather)
         now = datetime.datetime.now()
 
         # Format the date and day
@@ -139,7 +139,7 @@ def wether():
         print("Date:", date)
         print("Day:", day)
 
-        return render_template("wether.html",wether=wether,date=date,day=day ,city=city)
+        return render_template("weather.html",wether=wether,date=date,day=day ,city=city)
     else:
         return "data not found"
 
